@@ -1,0 +1,15 @@
+.content {
+  grid-area: c;
+  background-color: beige;
+}
+
+.container__header_img {
+  height: 300px;
+  overflow: hidden;
+}
+
+.header_img {
+  width: auto;
+  position: relative;
+  top: -120px;
+}
