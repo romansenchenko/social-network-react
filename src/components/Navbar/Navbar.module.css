@@ -1,0 +1,17 @@
+.nav {
+  grid-area: n;
+  background-color: aqua;
+}
+
+.nav__logo img{
+  width: 80px;
+  height: 80px;
+}
+
+.item {
+  color: white;
+}
+
+.active {
+  color: gold;
+}
