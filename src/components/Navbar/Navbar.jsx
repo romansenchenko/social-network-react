@@ -7,10 +7,10 @@ const Navbar = () => {
       <img alt='logo' src='https://cdn.logo.com/hotlink-ok/logo-social.png' />
     </div>
     <div className={`${s.item} ${s.active}`}>
-      <a>Profile</a>
+      <a href="/profile">Profile</a>
     </div>
     <div className={`${s.item}`}>
-      <a>Messages</a>
+      <a href="/dialogs">Messages</a>
     </div>
     <div className={`${s.item}`}>
       <a>Photos</a>
