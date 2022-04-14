@@ -1,0 +1,13 @@
+.item {
+    color: #626C72;
+    background-color: rgb(197, 221, 161);
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
