@@ -1,9 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 .item {
     color: #626C72;
     background-color: rgb(197, 221, 161);
     border-radius: 10px;
     margin: 10px auto;
-    width: 50%;
+    width: 60%;
 }
 
 .item img {

@@ -1,3 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
 .item img {
     width: 60px;
 }
+
+.postsBlock {
+    width: 60%;
+    margin: auto;
+  }
+
+.posts {
+    margin-top: 10px;
+  }
