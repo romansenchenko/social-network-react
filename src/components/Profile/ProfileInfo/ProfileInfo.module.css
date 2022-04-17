@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .container__header_img {
   height: 300px;
   overflow: hidden;
@@ -7,4 +11,14 @@
   width: auto;
   position: relative;
   top: -120px;
+}
+
+.avaDescripsionBlock {
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  width: 60%;
+  margin: auto;
+  position: relative;
+  top: -50px;
 }

@@ -1,26 +1,17 @@
 import React from 'react';
-import MyPosts from './MyPosts/MyPosts';
-import s from './Profile.module.css';
+import s from './ProfileInfo.module.css';
 
-const Profile = () => {
-    return <div className={s.content}>
+const ProfileInfo = () => {
+    return <div>
         <div className={s.container__header_img}>
             <img className={s.header_img} alt='content__img' src='https://static.insales-cdn.com/files/1/1718/14722742/original/mirissa_3f55c1430faff61080ededda43638142.jpg'></img>
         </div>
-        <div>
+
+        <div className={s.avaDescripsionBlock}>
             Ava+name
         </div>
-        <div>
-            links
-        </div>
-        <div>
-            content
-            <div>
-                Info+Photos
-            </div>
-            <MyPosts />
-        </div>
+
     </div>
 }
 
-export default Profile;
+export default ProfileInfo;
