@@ -8,10 +8,15 @@
   height: 80px;
 }
 
-.item {
+.item a:active{
   color: white;
+  text-decoration: none;
 }
 
-.active {
+a[className="active"]{
   color: gold;
+}
+
+Link {
+  padding: 10px;
 }
