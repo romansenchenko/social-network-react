@@ -8,16 +8,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = (state) => { 
   root.render(
     <React.StrictMode>
       <BrowserRouter>
         <App
           state={state}
           dispatch={store.dispatch.bind(store)}
-          addPost={store.addPost.bind(store)}
+          addPost={store.dispatch.bind(store)}
           newPostText={store._state.profilePage.newPostText}
-          updateNewPostText={store.updateNewPostText.bind(store)}
+          updateNewPostText={store.dispatch.bind(store)}
           dialogs={store._state.dialogsPage.dialogs}
           messages={store._state.dialogsPage.messages}
           posts={store._state.profilePage.posts} />
