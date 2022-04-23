@@ -1,5 +1,5 @@
 import React from "react";
-import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/state";
+import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/profile-reducer";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
@@ -30,7 +30,6 @@ const MyPosts = (props) => {
                         ref={newPostElement}
                         value = {props.newPostText}
                         name="" id="" cols="30" rows="3"></textarea>
-
                 </div>
                 <div>
                     <button onClick={addPost}>Add post</button>
