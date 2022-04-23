@@ -1,4 +1,4 @@
-import store from './redux/state';
+import store from './redux/redux-store';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -18,12 +18,12 @@ let rerenderEntireTree = (state) => {
           store={store}
 
           addPost={store.dispatch.bind(store)}
-          newPostText={store._state.profilePage.newPostText}
-          newMessageText={store._state.dialogsPage.newMessageText}
           updateNewPostText={store.dispatch.bind(store)}
-          dialogs={store._state.dialogsPage.dialogs}
-          messages={store._state.dialogsPage.messages}
-          posts={store._state.profilePage.posts} />
+          newPostText={state.profilePage.newPostText}
+          newMessageText={state.dialogsPage.newMessageText}
+          dialogs={state.dialogsPage.dialogs}
+          messages={state.dialogsPage.messages}
+          posts={state.profilePage.posts} />
       </BrowserRouter>
     </React.StrictMode>
   );
@@ -31,7 +31,9 @@ let rerenderEntireTree = (state) => {
 
 rerenderEntireTree(store.getState());
 
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+  rerenderEntireTree(store.getState());
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
