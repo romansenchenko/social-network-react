@@ -1,4 +1,18 @@
 .header {
     grid-area: h;
     background-color: aquamarine;
+
+}
+
+.search__field  {
+    float: left;
+}
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    color: black;
+    
 }
