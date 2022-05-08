@@ -1,0 +1,16 @@
+
+
+.formContol.error input,
+.formContol.error textarea {
+    border: solid red 1px;
+}
+
+.formContol.error span {
+    color: red;
+}
+
+.formSummaryError {
+    border: red 1px solid;
+    padding: 5px;
+    color: red;
+}
