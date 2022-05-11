@@ -2,10 +2,11 @@ import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
 import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({profile, status, updateStatus}) => {
 
-    if(!props.profile) {
+    if(!profile) {
         return <Preloader />
     }
     return <div>
@@ -14,12 +15,12 @@ const ProfileInfo = (props) => {
         </div>
 
         <div className={s.avaDescripsionBlock}>
-            <img alt='userAvatar' src={props.profile.photos.small} />
+            <img alt='userAvatar' src={profile.photos.small} />
             <div>
-                <h2>{props.profile.fullName}</h2>
-{/*                 <p>О себе: {props.profile.aboutMe}</p>
- */}                <ProfileStatus status = {props.status} updateStatus={props.updateStatus}  /* {props.profile.aboutMe} */ />
-                    <p>Работа: { props.profile.lookingForAJob ? 'ищу' : 'не ищу'} ({props.profile.lookingForAJobDescription})</p>
+                <h2>{profile.fullName}</h2>
+{/*                 <p>О себе: {profile.aboutMe}</p>
+ */}                <ProfileStatusWithHooks status = {status} updateStatus={updateStatus}  /* {props.profile.aboutMe} */ />
+                    <p>Работа: { profile.lookingForAJob ? 'ищу' : 'не ищу'} ({profile.lookingForAJobDescription})</p>
             </div>
         </div>
     </div>
