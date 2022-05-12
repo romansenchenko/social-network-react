@@ -31,7 +31,7 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portion
                     onClick={() => { 
                         onPageChanged(p); 
                     }}> {p} </span>
-            })}   
+            })}    
             { portionCount > portionNumber &&
                 <button onClick={() => { setPortionNumber(portionNumber + 1) }}>Next</button> }
     

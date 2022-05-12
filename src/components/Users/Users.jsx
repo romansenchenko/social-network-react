@@ -9,7 +9,7 @@ let Users = ({ currentPage, onPageChanged, totalUsersCount, pageSize, users, ...
             totalItemsCount={totalUsersCount}
             pageSize={pageSize} />
         <div>
-            {
+            { 
                 users.map(u => <User followingInProgress={props.followingInProgress}
                     unfollow={props.unfollow}
                     follow={props.follow}
