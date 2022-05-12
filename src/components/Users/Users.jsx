@@ -3,13 +3,13 @@ import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
 
 let Users = ({ currentPage, onPageChanged, totalUsersCount, pageSize, users, ...props }) => {
-    return <div>
+    return <div> 
         <Paginator currentPage={currentPage}
             onPageChanged={onPageChanged}
-            totalUsersCount={totalUsersCount}
+            totalItemsCount={totalUsersCount}
             pageSize={pageSize} />
         <div>
-            {
+            { 
                 users.map(u => <User followingInProgress={props.followingInProgress}
                     unfollow={props.unfollow}
                     follow={props.follow}
