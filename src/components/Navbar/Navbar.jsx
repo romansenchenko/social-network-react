@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import s from './Navbar.module.css';
+import logo from '../../assets/images/logo-icon.svg';
 
 const Navbar = () => {
   return <nav className={s.nav}>
-    <div className={s.nav__logo}>
-      <img alt='logo' src='https://cdn.logo.com/hotlink-ok/logo-social.png' />
+    <div className={s.panel_block}>
+      <img alt='logo' src={logo} className={s.logo}/>
     </div>
     <div className={`${s.item}`}>
       <Link to="/profile" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Profile</Link>

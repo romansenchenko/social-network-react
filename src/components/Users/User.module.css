@@ -1,4 +1,15 @@
+.userWrap {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 15px 15px 20px rgb(58 46 68 / 4%);
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    margin: 20px;
+}
+
 .userPhoto {
     width: 150px;
     height: 160px;
-}
+} 

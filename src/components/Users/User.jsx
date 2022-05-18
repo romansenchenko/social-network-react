@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 let User = ({ user, followingInProgress, follow, unfollow }) => {
     return (
-        <div>
+        <div className={styles.userWrap}>
             <span>
                 <div>
                     <Link to={'/profile/' + user.id}>
