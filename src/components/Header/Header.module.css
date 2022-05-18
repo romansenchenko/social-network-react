@@ -1,11 +1,45 @@
-.header {
-    grid-area: h;
-    background-color: aquamarine;
-
+* {
+    box-sizing: border-box;
 }
 
-.search__field  {
+.header {
+    width: auto;
+    grid-area: h;
+    background-color: white;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 4px rgb(58 46 68 / 4%);
+}
+
+.search__field {
     float: left;
+    margin: auto;
+    display: block;
+    padding: 25px;
+    width: 450px;
+    position: relative;
+    line-height: 26px;
+}
+
+.search__field input {
+    border: none;
+    border-style: none;
+    border-radius: 5px;
+    border-color: #fff;
+    padding-left: 1.25rem;
+    background: none;
+    cursor: text;
+    font-family: Arial, sans-serif;
+    color: #626c72;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+input:active {
+    border: none;
 }
 
 .loginBlock {
@@ -14,5 +48,5 @@
 
 .loginBlock a {
     color: black;
-    
+
 }

@@ -5,11 +5,11 @@ import s from './Header.module.css';
 const Header = (props) => {
     return <header className={s.header}>
         <div className={s.search__field}>
-            Search
+            <input type={'text'} placeholder="Search..." />
         </div>
         <div className={s.loginBlock}>
             { props.isAuth 
-                ? <div> {props.login} <button onClick={props.logout}>Log out</button> </div>
+                ? <div> @{props.login} <button onClick={props.logout}>Log out</button> </div>
                 : <Link to='/login'>Login</Link> }
         </div>
     </header>
