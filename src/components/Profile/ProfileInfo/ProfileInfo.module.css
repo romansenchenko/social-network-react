@@ -23,7 +23,7 @@
   top: -120px;
   display: block;
 } 
-
+ 
 .avatarBlock {
   background-color: white;
   border-radius: 20px;
@@ -32,12 +32,17 @@
   position: relative;
   top: -75px;
   margin-bottom: 20px;
-  height: 150px;
+  height: 160px;
+  box-shadow: 15px 15px 20px rgb(58 46 68 / 4%);
+  border: 1px solid #eeefefef;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .imgContainer {
   position: relative;
   top: -55%;
+  width: 100%;
 }
 
 .userPhoto {
@@ -63,6 +68,24 @@
   width: 80%;
   margin: auto;
   position: relative;
-  top: -50px;
   margin-bottom: 50px;
+  box-shadow: 15px 15px 20px rgb(58 46 68 / 4%);
+  border: 1px solid #eeefefef;
+  top: -60px;
+}
+
+.uploadBtnBlock {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: -130px;
+}
+
+.status {
+  
+  text-align: center;
+}
+
+.contact {
+  padding-left: 10px;
 }

@@ -1,14 +1,36 @@
-
 .paginator {
-    margin: 10px; 
+    display: inline-block;
 }
 
 .pageNumber {
-    padding: 4px;
-    border: 1px solid grey;
-} 
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
 
-.pageNumber .selectedPage {
-    font-weight: bold;
-    border-color: black;
+.paginator button {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    float: left;
+}
+
+.pageNumber span.selectedPage {
+    background-color: #8224E3;
+    color: white;
+}
+
+.paginator span:hover:not(.selectedPage),
+button:hover:not(.selectedPage) {
+    background-color: #8224E3;
+    color: white;
+}
+
+.prevPageBtn {
 }

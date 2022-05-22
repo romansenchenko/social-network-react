@@ -1,6 +1,18 @@
+import React from 'react';
 import { connect } from "react-redux";
-import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/profile-reducer";
+import { compose } from 'redux';
+import { addPostActionCreator } from "../../../redux/profile-reducer";
 import MyPosts from "./MyPosts";
+
+class MyPostsContainer extends React.Component {
+    render() {
+        return <MyPosts 
+            profile={this.props.profile}
+            posts={this.props.posts}
+            addPost={this.props.addPost}
+            />
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -16,7 +28,8 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const MyPostsContainer = connect( mapStateToProps, mapDispatchToProps )(MyPosts);
 
 
-export default MyPostsContainer;
+export default compose(
+    connect( mapStateToProps, mapDispatchToProps )
+)(MyPostsContainer);
