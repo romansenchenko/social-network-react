@@ -5,3 +5,9 @@
 .content {
     width: auto;
 }
+
+.line {
+    border-bottom: 1px solid #e7edf2;
+    position: relative;
+    top: -70px;
+}

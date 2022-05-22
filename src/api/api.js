@@ -51,12 +51,16 @@ export const profileAPI = {
     },
     savePhoto(photoFile) {
         let formData = new FormData();
-        formData.append("image", photoFile);debugger;
-        return instance.put(`profile/photo/`, formData, {
+        formData.append("image", photoFile, photoFile.name);
+        return instance.put(`profile/photo/`, {photo: formData}, {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data',
+                "API-KEY": "39be2bd1-17d2-4382-b7c2-756bd06e234f"
             }
         });
+    },
+    saveProfile(profile) {
+        return instance.put(`profile/`, profile )
     }
 }
 

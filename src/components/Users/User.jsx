@@ -9,26 +9,15 @@ let User = ({ user, followingInProgress, follow, unfollow }) => {
             <span>
                 <div>
                     <Link to={'/profile/' + user.id}>
-                        <img alt="ava" src={user.photos.small != null 
-                            ? user.photos.small 
+                        <img alt="ava" src={user.photos.small != null
+                            ? user.photos.small
                             : userPhoto} className={styles.userPhoto} />
                     </Link>
-                </div>
-                <div>
-                    {user.followed 
-                        ? <button disabled={followingInProgress
-                            .some(id => id === user.id)}
-                            onClick={() => { unfollow(user.id); }} >
-                            Unfollow</button>
-                        : <button disabled={followingInProgress
-                            .some(id => id === user.id)}
-                            onClick={() => { follow(user.id); }} >
-                            Follow</button>}
                 </div>
             </span>
             <span>
                 <span>
-                    <div> {user.name} </div>
+                    <div className={styles.userName}> {user.name} </div>
                     <div> {user.status} </div>
                 </span>
                 <span>
@@ -36,6 +25,17 @@ let User = ({ user, followingInProgress, follow, unfollow }) => {
                     <div> {'u.location.city'} </div>
                 </span>
             </span>
+            <div className={styles.followBtn}>
+                {user.followed
+                    ? <button disabled={followingInProgress
+                        .some(id => id === user.id)}
+                        onClick={() => { unfollow(user.id); }} >
+                        Unfollow</button>
+                    : <button disabled={followingInProgress
+                        .some(id => id === user.id)}
+                        onClick={() => { follow(user.id); }} >
+                        Follow</button>}
+            </div>
         </div>)
 }
 

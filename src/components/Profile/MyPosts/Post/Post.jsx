@@ -1,12 +1,23 @@
 import React from "react";
 import s from './Post.module.css';
+import userPhoto from '../../../../assets/images/user.png';
 
-const Post = (props) => {
+
+const Post = ({ message, likesCount, profile }) => {
   return <div className={s.item}>
-    <img alt="avatarImg" src="https://avatars.mds.yandex.net/get-mpic/4809583/img_id8206204418984193451.jpeg/13hq"></img>
-    {props.message}
-    <div>
-      <span>{props.likesCount} like</span>
+    <div className={s.imgPost}>
+      <img alt='userAvatar' src={profile.photos.small || userPhoto} className={s.userPhoto} />
+    </div>
+    <div className={s.postWithoutImg}>
+      <div className={s.userName}>
+        <p><strong>{profile.fullName}</strong> add post:</p>
+      </div>
+      <div className={s.message}>
+        {message}
+      </div>
+      <div className={s.likesCount}>
+        <span className={s.like}> Liked {likesCount}</span>
+      </div>
     </div>
   </div>
 }

@@ -38,9 +38,9 @@
     line-height: 26px;
 }
 
-input:active {
-    border: none;
-}
+input:focus {
+    outline: none !important;
+  }
 
 .loginBlock {
     float: right;
