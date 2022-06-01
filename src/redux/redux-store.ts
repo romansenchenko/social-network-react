@@ -7,17 +7,20 @@ import thunkMiddleWare from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
 import appReducer from "./app-reducer";
 
-let reducers = combineReducers({
+let rootReducers = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     usersPage: usersReducer,
     auth: authReducer,
     form: formReducer,
     app: appReducer
-});
+})
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleWare));
+type RootReducerType = typeof rootReducers
+export type AppStateType = ReturnType<RootReducerType>
 
-window.store=store;
+let store = createStore(rootReducers, applyMiddleware(thunkMiddleWare))
+// @ts-ignore
+window.__store__=store
 
-export default store;
+export default store

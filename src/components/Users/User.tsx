@@ -1,9 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from './User.module.css';
 import userPhoto from '../../../src/assets/images/user.png';
 import { Link } from "react-router-dom";
+import { UserType } from "../../types/types";
 
-let User = ({ user, followingInProgress, follow, unfollow }) => {
+type PropsType = {
+    user: UserType
+    followingInProgress: Array<number>
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
+}
+
+let User: FC<PropsType> = ({ user, followingInProgress, follow, unfollow }) => {
     return (
         <div className={styles.userWrap}>
             <span>
