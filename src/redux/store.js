@@ -5,10 +5,7 @@ let store = {
     _state: {
         profilePage: {
             posts: [
-                //{ id: 1, message: "Вау", likesCount: 111 },
                 { id: 1, message: "Моё первое сообщение!", likesCount: 111 }
-                //{ id: 2, message: "Мое 2 сообщение.", likesCount: 11 },
-                //{ id: 3, message: "%-)", likesCount: 1 }
             ],
             newPostText: 'exampleText'
         },

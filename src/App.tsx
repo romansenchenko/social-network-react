@@ -8,24 +8,31 @@ import LoginPage from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 //import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import { initializeApp } from '../src/redux/app-reducer';
-import { compose } from 'redux'; import {
+import { initializeApp } from './redux/app-reducer';
+import { compose } from 'redux'; 
+import {
   useLocation,
   useNavigate,
   useParams,
 } from "react-router-dom";
 import Preloader from './components/common/Preloader/Preloader';
+import { AppStateType } from './redux/redux-store';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+//@ts-ignore
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
-class App extends React.Component {
+type MapPropsType = ReturnType<typeof mapStateToProps>
+type DispatchPropsType = {
+  initializeApp: () => void
+}
 
-  /* catchAllUnhandledErrors = (promiseRejectionEvent) => {
-    alert("Some error occured");
-    //console.error(promiseRejectionEvent);
+class App extends React.Component<MapPropsType & DispatchPropsType> {
 
-  } */
+  catchAllUnhandledErrors = (e: PromiseRejectionEvent) => {
+    //alert("Some error occured");
+    console.error(e);
+  }
 
   componentDidMount() {
     this.props.initializeApp();
@@ -55,7 +62,7 @@ class App extends React.Component {
               <Route path='/login' element={<LoginPage />} />
               <Route path='*' element={<NotFoundPage404 />} />
             </Routes>
-          </Suspense>
+          </Suspense> 
         </div>
       </div>
     );
@@ -66,8 +73,8 @@ const NotFoundPage404 = () => {
   return <h2>404 NOT FOUND</h2>
 }
 
-function withRouter(Component) {
-  function ComponentWithRouterProp(props) {
+/* function withRouter(Component: React.FC) {
+  function ComponentWithRouterProp(props: MapPropsType) {
     let location = useLocation();
     let navigate = useNavigate();
     let params = useParams();
@@ -79,12 +86,12 @@ function withRouter(Component) {
     );
   }
   return ComponentWithRouterProp;
-}
+} */
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: AppStateType) => ({
   initialized: state.app.initialized
 })
 
-export default compose(
-  withRouter,
+export default compose<React.ComponentType>(
+  //withRouter,
   connect(mapStateToProps, { initializeApp }))(App);
