@@ -2,13 +2,16 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import s from './Header.module.css';
 
-type PropsType = {
+export type MapPropsType = {
     isAuth: boolean
-    login: string
+    login: string | null
+}
+
+export type DispatchPropsType = {
     logout: () => void
 }
 
-const Header: FC<PropsType> = (props) => {
+const Header: FC<MapPropsType & DispatchPropsType> = (props) => {
     return <header className={s.header}>
         <div className={s.search__field}>
             <input type={'text'} placeholder="Search..." />

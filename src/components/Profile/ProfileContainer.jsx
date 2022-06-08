@@ -9,14 +9,27 @@ import {
 } from "react-router-dom";
 import { compose } from 'redux';
 
+/* type MapPropsType = ReturnType<typeof mapStateToProps>
+type DispatchPropsType = { 
+    getUserProfile: (userId: number) => void 
+    getStatus: (userId: number) => void 
+    updateStatus: (status: string) => void 
+    savePhoto: (file: File) => void 
+    saveProfile?: (profile: ProfileType) => Promise<any> 
+}
+type PathParamsType = {
+    userId: string
+}
 
-class ProfileContainer extends React.Component {
+type PropsType = MapPropsType & DispatchPropsType & RouteComponentProps<PathParamsType>
+ */
+class ProfileContainer extends React.Component/* <PropsType> */ {
 
     refreshProfile() {
-        let userId = this.props.router.params.userId;
+        let userId/* : number | null */ = this.props.router.params.userId;
         if (!userId) {
             userId = this.props.autorizedUserId;
-        };
+        }
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
     }
@@ -25,7 +38,7 @@ class ProfileContainer extends React.Component {
         this.refreshProfile();
     } 
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(prevProps/* : PropsType */, prevState/* : PropsType */) {
         this.refreshProfile();
     }
 
@@ -39,15 +52,15 @@ class ProfileContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state/* : AppStateType */) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     autorizedUserId: state.auth.id,
     isAuth: state.auth.isAuth
 });
 
-function withRouter(Component) {
-    function ComponentWithRouterProp(props) {
+function withRouter(Component/* : React.Component */) {
+    function ComponentWithRouterProp(props/* : any */) {
         let location = useLocation();
         let navigate = useNavigate();
         let params = useParams();
@@ -61,7 +74,7 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-export default compose(
+export default compose/* <React.ComponentType> */(
     connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile }),
     withRouter//,
     //withAuthRedirect
