@@ -20,6 +20,9 @@ const Navbar = () => {
     <div className={`${s.item}`}>
       <Link to="/messages" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Photos</Link>
     </div>
+    <div className={`${s.item}`}>
+      <Link to="/chat" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Chat</Link>
+    </div>
   </nav>
 }
 
