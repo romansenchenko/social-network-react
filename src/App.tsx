@@ -19,8 +19,10 @@ import { UsersPage } from './components/Users/UsersContainer';
 import { LoginPage } from './components/Login/Login';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-//@ts-ignore
+
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+
+const ChatPage = React.lazy(() => import('./pages/Chat/ChatPage'));
 
 type MapPropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -60,6 +62,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
               <Route path='/profile/' element={<ProfileContainer />} />
               <Route path='/users' element={<UsersPage pageTitle={'Самурай'} />} />
               <Route path='/login' element={<LoginPage />} />
+              <Route path='/chat' element={<ChatPage />} />
               <Route path='*' element={<NotFoundPage404 />} />
             </Routes>
           </Suspense> 
