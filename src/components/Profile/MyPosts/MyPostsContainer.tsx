@@ -8,7 +8,6 @@ import MyPosts, { DispatchPropsType, MapPropsType } from "./MyPosts";
 const mapStateToProps = (state: AppStateType) => {
     return {
         posts: state.profilePage.posts
-        //todo: map state to profile to MyPosts component
     }
 }
 

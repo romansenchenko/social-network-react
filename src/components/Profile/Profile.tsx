@@ -23,7 +23,7 @@ const Profile: FC<PropsType> = (props) => {
             saveProfile={props.saveProfile}
             updateStatus={props.updateStatus} />
         <div className={s.line}></div>
-        { props.profile!=null && <MyPostsContainer /* profile={props.profile}  *//>}
+        { props.profile!=null && <MyPostsContainer />}
     </div> 
 }
 

@@ -24,6 +24,10 @@ a[className="activeLink"] {
   color: gold;
 }
 
+.activeLink {
+  color: gold;
+}
+
 .item a{
   margin-bottom: 20px;
   text-decoration: none;

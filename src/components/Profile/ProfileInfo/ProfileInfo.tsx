@@ -30,7 +30,6 @@ const ProfileInfo: FC<PropsType> = ({ profile, status, updateStatus, isOwner, sa
     }
 
     const onSubmit = (formData: ProfileType) => {
-        // todo: remove then
         saveProfile(formData).then(
             () => {
                 setEditMode(false);

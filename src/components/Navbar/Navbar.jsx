@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import s from './Navbar.module.css';
 import logo from '../../assets/images/logo-icon.svg';
+import classNames from "classnames";
 
 const Navbar = () => {
   return <nav className={s.nav}>
@@ -9,19 +10,19 @@ const Navbar = () => {
       <img alt='logo' src={logo} className={s.logo}/>
     </div>
     <div className={`${s.item}`}>
-      <Link to="/profile" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Profile</Link>
+      <NavLink to="/profile" className={({ isActive }) =>(classNames({[s.activeLink]: isActive}))}>Profile</NavLink>
     </div>
     <div className={`${s.item} ${s.active}`}>
-      <Link to="/dialogs" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Messages</Link>
+      <NavLink to="/dialogs" className={({ isActive }) =>(classNames({[s.activeLink]: isActive}))}>Messages</NavLink>
     </div>
     <div className={`${s.item}`}>
-      <Link to="/users" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Users</Link>
+      <NavLink to="/users" className={({ isActive }) =>(classNames({[s.activeLink]: isActive}))}>Users</NavLink>
     </div>
     <div className={`${s.item}`}>
-      <Link to="/messages" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Photos</Link>
+      <NavLink to="/messages" className={({ isActive }) =>(classNames({[s.activeLink]: isActive}))}>Photos</NavLink>
     </div>
     <div className={`${s.item}`}>
-      <Link to="/chat" className={({isActive})=>isActive? `${s.activeLink}`:' '}>Chat</Link>
+      <NavLink to="/chat" className={({ isActive }) =>(classNames({[s.activeLink]: isActive}))}>Chat</NavLink>
     </div>
   </nav>
 }

@@ -71,7 +71,7 @@ const AddMessageForm: FC<{ }> = () => {
             <textarea onChange={(e) => setMessage(e.currentTarget.value)} value={message}></textarea>
         </div>
         <div>
-            <button disabled={status !== 'ready'} onClick={sendMessageHandler}>Send</button>
+            <button onClick={sendMessageHandler}>Send</button>
         </div>
     </div>
 }

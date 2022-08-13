@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { InjectedFormProps, reduxForm } from "redux-form";
-import { Field } from "redux-form";/* 
-import { maxLengthCreator } from "../../../utils/validators/validators"; */
+import { Field } from "redux-form";
 import { PostType, ProfileType } from "../../../types/types";
 import { LoginFormValuesType, Textarea } from "../../common/FormsControls/FormsControls";
 import s from './MyPosts.module.css';
@@ -9,23 +8,22 @@ import Post from "./Post/Post";
 
 export type MapPropsType = {
     posts: Array<PostType>
-    //profile: ProfileType
 }
 export type DispatchPropsType = {
     addPost: (newPostText: string) => void
 }
 
-const MyPosts: FC<MapPropsType & DispatchPropsType> = ({posts, addPost/* , profile */}) => {
+const MyPosts: FC<MapPropsType & DispatchPropsType> = ({posts, addPost}) => {
     let postElements =
-        posts.map(p => <Post key={p.id} /* profile={profile} */ message={p.message} likesCount={p.likesCount} />);
+        posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
 
     let onAddPost = (values: AddPostFormValuesType) => {
         addPost(values.newPostText);
     };
     return (
         <div className={s.postsBlock}>
-            {/* <h3>My posts</h3> */}
-            <div /* className={s.newPostBlock} */ >
+            {}
+            <div >
                 <AddPostFormRedux onSubmit={onAddPost} />
             </div>
             <div className={s.lineBlock}>
@@ -38,7 +36,6 @@ const MyPosts: FC<MapPropsType & DispatchPropsType> = ({posts, addPost/* , profi
     )
 }
 
-/* const maxLength5 =maxLengthCreator(5); */
 
 type PropsType = {
 
@@ -56,8 +53,7 @@ const AddPostForm: FC<InjectedFormProps<AddPostFormValuesType, PropsType> & Prop
                 <Field component={Textarea} name={'newPostText'}
                 cols='74' rows='4' 
                 placeholder={`What's new?`}
-                className={s.field}
-                /* validate={[required, maxLength5]} */ />
+                className={s.field} />
             </div>
             <div className={s.addPostBtnBlock}>
                 <button className={s.addPostBtn}>Add post</button>

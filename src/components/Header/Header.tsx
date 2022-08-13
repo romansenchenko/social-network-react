@@ -17,9 +17,9 @@ const Header: FC<MapPropsType & DispatchPropsType> = (props) => {
             <input type={'text'} placeholder="Search..." />
         </div>
         <div className={s.loginBlock}>
-            { props.isAuth 
+            {props.isAuth
                 ? <div> @{props.login} <button onClick={props.logout}>Log out</button> </div>
-                : <Link to='/login'>Login</Link> }
+                : <Link to='/login'>Login</Link>}
         </div>
     </header>
 }

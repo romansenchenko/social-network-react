@@ -1,5 +1,4 @@
-/* import { makeStyles } from '@fluentui/react-make-styles';
- */import React, { FC } from 'react';
+import React, { FC } from 'react';
 import preloader from '../../../assets/images/preloaderOrigin.gif';
 import s from '../Preloader/Preloader.module.css';
 
