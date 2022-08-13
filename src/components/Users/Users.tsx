@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AnyAction } from "redux";
 import { FilterType, requestUsers, follow, unfollow } from "../../redux/users-reducer";
 import { getCurrentPage, getFollowingInProgress, getPageSize, getTotalUsersCount, getUsers, getUsersFilter } from "../../redux/users-selectors";

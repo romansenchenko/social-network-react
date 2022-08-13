@@ -2,17 +2,10 @@ import React, { Suspense } from 'react';
 import { connect } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-//import DialogsContainer from './components/Dialogs/DialogsContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-//import ProfileContainer from './components/Profile/ProfileContainer';
 import { initializeApp } from './redux/app-reducer';
 import { compose } from 'redux'; 
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
 import Preloader from './components/common/Preloader/Preloader';
 import { AppStateType } from './redux/redux-store';
 import { UsersPage } from './components/Users/UsersContainer';
@@ -32,7 +25,6 @@ type DispatchPropsType = {
 class App extends React.Component<MapPropsType & DispatchPropsType> {
 
   catchAllUnhandledErrors = (e: PromiseRejectionEvent) => {
-    //alert("Some error occured");
     console.error(e);
   }
 
@@ -76,25 +68,9 @@ const NotFoundPage404 = () => {
   return <h2>404 NOT FOUND</h2>
 }
 
-/* function withRouter(Component: React.FC) {
-  function ComponentWithRouterProp(props: MapPropsType) {
-    let location = useLocation();
-    let navigate = useNavigate();
-    let params = useParams();
-    return (
-      <Component
-        {...props}
-        router={{ location, navigate, params }}
-      />
-    );
-  }
-  return ComponentWithRouterProp;
-} */
-
 const mapStateToProps = (state: AppStateType) => ({
   initialized: state.app.initialized
 })
 
 export default compose<React.ComponentType>(
-  //withRouter,
   connect(mapStateToProps, { initializeApp }))(App);

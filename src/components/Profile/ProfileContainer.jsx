@@ -9,24 +9,10 @@ import {
 } from "react-router-dom";
 import { compose } from 'redux';
 
-/* type MapPropsType = ReturnType<typeof mapStateToProps>
-type DispatchPropsType = { 
-    getUserProfile: (userId: number) => void 
-    getStatus: (userId: number) => void 
-    updateStatus: (status: string) => void 
-    savePhoto: (file: File) => void 
-    saveProfile?: (profile: ProfileType) => Promise<any> 
-}
-type PathParamsType = {
-    userId: string
-}
-
-type PropsType = MapPropsType & DispatchPropsType & RouteComponentProps<PathParamsType>
- */
-class ProfileContainer extends React.Component/* <PropsType> */ {
+class ProfileContainer extends React.Component {
 
     refreshProfile() {
-        let userId/* : number | null */ = this.props.router.params.userId;
+        let userId = this.props.router.params.userId;
         if (!userId) {
             userId = this.props.autorizedUserId;
         }
@@ -38,7 +24,7 @@ class ProfileContainer extends React.Component/* <PropsType> */ {
         this.refreshProfile();
     } 
 
-    componentDidUpdate(prevProps/* : PropsType */, prevState/* : PropsType */) {
+    componentDidUpdate(prevProps, prevState) {
         this.refreshProfile();
     }
 
@@ -52,15 +38,15 @@ class ProfileContainer extends React.Component/* <PropsType> */ {
     }
 }
 
-let mapStateToProps = (state/* : AppStateType */) => ({
+let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     autorizedUserId: state.auth.id,
     isAuth: state.auth.isAuth
 });
 
-function withRouter(Component/* : React.Component */) {
-    function ComponentWithRouterProp(props/* : any */) {
+function withRouter(Component) {
+    function ComponentWithRouterProp(props) {
         let location = useLocation();
         let navigate = useNavigate();
         let params = useParams();
@@ -74,8 +60,7 @@ function withRouter(Component/* : React.Component */) {
     return ComponentWithRouterProp;
 }
 
-export default compose/* <React.ComponentType> */(
+export default compose(
     connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile }),
-    withRouter//,
-    //withAuthRedirect
+    withRouter
 )(ProfileContainer);

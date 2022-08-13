@@ -38,64 +38,6 @@
     position: absolute;
 }
 
-*/* , span::after, span::before  */{
+* {
     box-sizing: border-box;
 }
-/* 
-.beehivePreloader > span::after {
-    background-color: #8224e3;
-} */
-/* .beehivePreloader > span {
-    display: block;
-    width: 32px;
-    height: 32px;
-    border: 2px #8224e3 solid;
-    border-radius: 100%;
-    overflow: hidden;
-    z-index: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
-/* .beehivePreloader > span::after {
-    width: 14px;
-    height: 2px;
-    top: 20px;
-    -webkit-transform-origin: 1px 1px;
-    -moz-transform-origin: 1px 1px;
-    transform-origin: 1px 1px;
-    background-color: #8224e3;
-    -webkit-animation: dashboard_hand 500ms linear infinite alternate;
-    -moz-animation: dashboard_hand 500ms linear infinite alternate;
-    animation: dashboard_hand 500ms linear infinite alternate;
-    /* animation-duration: 500ms;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: dashboard_hand; 
-} */
-/* 
-.beehivePreloader>span::before, .beehivePreloader>span::after {
-    content: "";
-    position: absolute;
-} */
-/* 
-.beehivePreloader > span::before {
-    background-color: #8224e3;
-} */
-
-/* .beehivePreloader > span::before {
-    width: 32px;
-    height: 10px;
-    background-color: #8224e3;
-    top: 20px;
-    left: -2px;
-} */
-/* 
-.beehivePreloader > span {
-    border: 2px #8224e3 solid;
-} */

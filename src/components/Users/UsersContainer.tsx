@@ -1,6 +1,4 @@
 import React, { FC } from 'react';
-import { UserType } from "../../types/types";
-import { FilterType } from '../../redux/users-reducer';
 import { getIsFetching } from '../../redux/users-selectors';
 import Preloader from '../common/Preloader/Preloader';
 import { useSelector } from 'react-redux';

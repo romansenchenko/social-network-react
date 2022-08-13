@@ -12,13 +12,13 @@ type PropsType = {
 }
 type ProfileTypeKeys = GetStringKeys<PropsType>
 
-const ProfileDataForm:FC<InjectedFormProps<ProfileType, PropsType> & PropsType > = ({handleSubmit, profile, error }) => {
+const ProfileDataForm: FC<InjectedFormProps<ProfileType, PropsType> & PropsType> = ({ handleSubmit, profile, error }) => {
     return <form onSubmit={handleSubmit}>
         <div><button>save</button></div>
-        { error && <div className={style.formSummaryError}>
-                {error}
-            </div>
-            }
+        {error && <div className={style.formSummaryError}>
+            {error}
+        </div>
+        }
         <div>
             <b>Full name:</b> <Field placeholder="Full name" name={'fullName'}
                 validate={[required]}
@@ -30,13 +30,13 @@ const ProfileDataForm:FC<InjectedFormProps<ProfileType, PropsType> & PropsType >
                 type={"checkbox"} />
         </div>
         <div>
-            <b>My proffesional skills:</b> 
+            <b>My proffesional skills:</b>
             <Field placeholder="My proffesional skills" name={'lookingForAJobDescription'}
                 validate={[required]}
                 component={Textarea} />
         </div>
         <div>
-            <b>About me:</b> 
+            <b>About me:</b>
             <Field placeholder="About me" name={'aboutMe'}
                 validate={[required]}
                 component={Textarea} />
@@ -46,11 +46,9 @@ const ProfileDataForm:FC<InjectedFormProps<ProfileType, PropsType> & PropsType >
             <b>Contacts:</b> {Object.keys(profile.contacts).map(key => {
                 return <div key={key} className={s.contact}>
                     <b>{key}: <Field placeholder={key} name={`contacts.${key}`}
-                /* validate={[required]} */
-                component={Input} /></b> 
+                        component={Input} /></b>
                 </div>
-/*                 <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} />
- */            })}
+            })}
         </div>
     </form>
 }

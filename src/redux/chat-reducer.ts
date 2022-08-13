@@ -1,9 +1,6 @@
 import { chatAPI, StatusType } from './../api/chat-api';
 import { BaseThunkType, InferActionsType } from './redux-store';
 import { FormAction, stopSubmit } from "redux-form";
-import { ResultCodeEnam, ResultCodeForCaptchaEnam } from "../api/api";
-import { securityAPI } from "../api/security-api";
-import { authAPI } from "../api/auth-api";
 import { ChatMessageType } from '../api/chat-api';
 import { Dispatch } from 'redux';
 

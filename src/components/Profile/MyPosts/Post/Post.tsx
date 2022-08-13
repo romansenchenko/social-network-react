@@ -7,14 +7,14 @@ type PropsType = {
   likesCount: number
 }
 
-const Post: FC<PropsType> = ({ message, likesCount/* , profile */ }) => {
+const Post: FC<PropsType> = ({ message, likesCount}) => {
   return <div className={s.item}>
     <div className={s.imgPost}>
-      <img alt='userAvatar' src={/* profile.photos.small || */ userPhoto} className={s.userPhoto} />
+      <img alt='userAvatar' src={ userPhoto} className={s.userPhoto} />
     </div>
     <div className={s.postWithoutImg}>
       <div className={s.userName}>
-        <p><strong>{/* {profile.fullName} */}</strong> add post:</p>
+        <p><strong>{}</strong> add post:</p>
       </div>
       <div className={s.message}>
         {message}
